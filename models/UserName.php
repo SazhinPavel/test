@@ -41,6 +41,7 @@ class UserName extends \yii\db\ActiveRecord
             [['content'], 'string'],
             [['created'], 'safe'],
             [['name', 'email'], 'string', 'max' => 64],
+            ['name', 'match', 'pattern' => '/^[a-z0-9]+$/i', 'message' => 'Логин может содержать только латиницу и цифры!'],
             ['verifyCode', 'captcha'],
         ];
     }
